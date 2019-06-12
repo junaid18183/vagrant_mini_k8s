@@ -69,7 +69,7 @@ kube-scheduler-mini-k8s            1/1     Running   2          36m
 You can copy the config file from the vagrant box and copy to your local machine and run the `kubectl` from your local machine. 
 
 ```
- vagrant ssh  -c 'cat ~/.kube/config' > kube-config
+ vagrant ssh  -c 'cat ~/.kube/config' > kube-config.yml
 INFO[0000] Host 127.0.0.1
 INFO[0000]   Port 2222
 INFO[0000]   # HostName: 127.0.0.1
@@ -84,12 +84,12 @@ mini-k8s   Ready    master   45m   v1.14.3
 For setting the —kubeconfig for the session export the KUBECONFIG variable like this 
 
 ```
-$ vagrant ssh  -c 'cat ~/.kube/config' > kube-config
+$ vagrant ssh  -c 'cat ~/.kube/config' > kube-config.yml
 INFO[0000] Host 127.0.0.1
 INFO[0000]   Port 2222
 INFO[0000]   # HostName: 127.0.0.1
 Connection to 127.0.0.1 closed.
-[kc:none][aws:none][jmemon@C02XH66YJG5M k8s-vagrant]$ export KUBECONFIG=kube-config
+[kc:none][aws:none][jmemon@C02XH66YJG5M k8s-vagrant]$ export KUBECONFIG=kube-config.yml
 [kc:none][aws:none][jmemon@C02XH66YJG5M k8s-vagrant]$ kubectl get nodes
 NAME       STATUS   ROLES    AGE   VERSION
 mini-k8s   Ready    master   47m   v1.14.3

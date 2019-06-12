@@ -14,7 +14,7 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   config.vm.box = "k8s-vagrant"
-  config.vm.hostname = "mini-k8s"
+  config.vm.hostname = "tiber"
   config.vm.network "private_network", ip: "172.28.128.3"
   config.vm.provision "shell", inline: $script
   config.vm.provider "virtualbox" do |vb|
