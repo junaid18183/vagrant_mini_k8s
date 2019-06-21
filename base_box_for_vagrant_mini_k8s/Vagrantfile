@@ -25,6 +25,7 @@ EOF
 # Set SELinux in permissive mode (effectively disabling it)
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+sysctl net.bridge.bridge-nf-call-iptables=1
 
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
