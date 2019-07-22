@@ -6,6 +6,7 @@ $script = <<-SCRIPT
 
 # kubelet requires swap off
 swapoff -a
+sysctl net.bridge.bridge-nf-call-iptables=1
 
 systemctl restart docker
 systemctl restart kubelet
@@ -25,3 +26,4 @@ end
 
 #kubectl create deployment --image nginx my-nginx
 #kubectl expose deployment my-nginx --port=80 --type=NodePort
+#kubectl run curl -it  --image=tutum/curl -- sh
